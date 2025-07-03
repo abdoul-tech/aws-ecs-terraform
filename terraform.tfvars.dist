@@ -1,0 +1,53 @@
+# Basic Configuration
+aws_region       = "us-east-1"
+application_name = "my-app"
+short_name       = "myapp"
+account_id       = "123456789012"
+
+# Domain and SSL Configuration
+dns_zone_id         = "Z1234567890ABC"
+acm_certificate_arn = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012"
+domaines            = ["app.example.com", "www.app.example.com"]
+
+# ECS Configuration
+ecs_execution_role_arn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+ecs_cluster_arn        = "arn:aws:ecs:us-east-1:123456789012:cluster/my-cluster"
+ecs_container_port     = 80
+ecs_host_port          = 80
+
+# Application Configuration
+app_image         = "strm/helloworld-http"
+app_port          = 80
+app_count         = 1
+health_check_path = "/"
+fargate_cpu       = 1024
+fargate_memory    = 2048
+
+# Network Configuration
+vpc_id     = "vpc-12345678"
+sg_id      = "sg-12345678"
+aws_lb_arn = "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/my-alb/1234567890123456"
+
+subnet_alb = [
+  "subnet-12345678",
+  "subnet-87654321",
+  "subnet-11111111",
+]
+
+subnet_ecs = [
+  "subnet-12345678",
+  "subnet-87654321",
+  "subnet-11111111",
+]
+
+# Terraform State Configuration
+terraform_state_bucket_name = "my-terraform-state-bucket"
+
+# Default Tags
+default_tags = {
+  Environment = "dev"
+  Project     = "my-project"
+  Owner       = "devops-team"
+  ManagedBy   = "terraform"
+}
+
