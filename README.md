@@ -122,6 +122,12 @@ After deployment, you'll see the following outputs:
 
 ## Architecture
 
+The following diagram shows the AWS ECS infrastructure architecture:
+
+![AWS ECS Infrastructure](assets/images/aws-ecs-infra.png)
+
+### Architecture Overview
+
 ```
 Internet → CloudFront → ALB → ECS Fargate Tasks
                         ↓
